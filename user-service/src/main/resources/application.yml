@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: user-service
+
+  flyway:
+    default-schema: user_db
+    locations:
+      - classpath:db/migration
+
+server:
+  port: 7001
+
+invoice:
+  service:
+    url: http://localhost:7002
+
+logging:
+  level:
+    org.springframework.retry: DEBUG
+    org.springframework.retry.annotation: DEBUG
+
+feign:
+  client:
+    config:
+     invoice-service-feign-client:
+       connectTimeout: 5000
+       readTimeout: 8000
