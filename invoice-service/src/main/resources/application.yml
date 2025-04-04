@@ -7,8 +7,8 @@ spring:
 
   flyway:
     default-schema: invoice_db
-  locations:
-    - classpath:db/migration
+    locations:
+      - classpath:db/migration
 
 server:
   port: 7002
